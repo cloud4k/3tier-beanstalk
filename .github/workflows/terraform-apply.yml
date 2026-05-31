@@ -6,6 +6,8 @@ on:
 jobs:
   terraform-apply:
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_db_password: ${{ secrets.TF_VAR_db_password }}
 
     defaults:
       run:
