@@ -29,7 +29,7 @@ $students = $pdo->query("SELECT * FROM students ORDER BY id DESC")->fetchAll(PDO
 <!DOCTYPE html>
 <html>
 <head>
-    <title>3tier-beanstalk</title>
+    <title>3tier-beanstalk CICD</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; }
         input { padding: 8px; margin: 5px; }
