@@ -1,5 +1,5 @@
 resource "aws_security_group" "beanstalk_app" {
-  name        = "${var.project_name}-beanstalk-app-sg"
+  name = var.security_group_name
   description = "Security group for Elastic Beanstalk application instances"
   vpc_id      = var.vpc_id
 
@@ -11,16 +11,9 @@ resource "aws_security_group" "beanstalk_app" {
   }
 
   tags = {
-    Name = "${var.project_name}-beanstalk-app-sg"
-  }
+  Name = var.security_group_name
 }
-
-resource "aws_elastic_beanstalk_application" "this" {
-  count       = var.create_application ? 1 : 0
-  name        = var.application_name
-  description = "PHP 8 Nginx 3-tier Elastic Beanstalk application"
 }
-
 resource "aws_elastic_beanstalk_environment" "this" {
   name                = var.environment_name
   application         = var.application_name
