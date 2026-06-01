@@ -50,7 +50,6 @@ variable "db_password" {
   type      = string
   sensitive = true
 }
-variable "create_application" {
-  type    = bool
-  default = true
+variable "security_group_name" {
+  type = string
 }
