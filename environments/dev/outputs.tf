@@ -13,9 +13,13 @@ output "private_app_subnet_ids" {
 output "private_db_subnet_ids" {
   value = module.networking.private_db_subnet_ids
 }
-output "beanstalk_url" {
-  value = module.elastic_beanstalk.environment_url
-}
 output "artifact_bucket_name" {
   value = module.artifacts.bucket_name
+}
+output "blue_url" {
+  value = module.beanstalk_blue.environment_url
+}
+
+output "green_url" {
+  value = module.beanstalk_green.environment_url
 }
